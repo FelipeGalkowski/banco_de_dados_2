@@ -27,3 +27,6 @@ CREATE TRIGGER trg_validar_agendamento
 BEFORE INSERT OR UPDATE ON agendamento
 FOR EACH ROW
 EXECUTE FUNCTION validar_horario_agendamento();
+
+-- Teste do gatilho
+INSERT INTO agendamento (id, data_agendamento, horario_inicio, horario_fim) VALUES (1, '2025-04-01', '11:50', '12:10'); -- Deve falhar
