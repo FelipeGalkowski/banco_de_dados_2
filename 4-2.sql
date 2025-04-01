@@ -18,3 +18,6 @@ CREATE TRIGGER trg_validar_nascimento_update
 BEFORE UPDATE ON nascimento
 FOR EACH ROW
 EXECUTE FUNCTION validar_campos_nascimento();
+
+-- Teste do gatilho
+UPDATE nascimento SET nome = NULL WHERE id = 1; -- Deve falhar
